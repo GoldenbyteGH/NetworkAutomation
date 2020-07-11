@@ -1,0 +1,26 @@
+
+config router static
+edit 1
+set gateway -GW_IP-
+set device "wan1"
+next
+end
+
+
+config system interface
+edit "wan1"
+set mode static
+set ip -WAN_IP- -WAN_SM-
+set allowaccess ping https http fgfm
+next
+
+edit "internal"
+set allowaccess ping https ssh http fgfm capwap
+set type hard-switch
+set alias "LAN"
+next
+
+config system settings
+set opmode transparent
+set manageip -LAN_IP- -LAN_SM-
+end

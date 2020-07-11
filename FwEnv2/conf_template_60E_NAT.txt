@@ -1,0 +1,34 @@
+
+config router static
+edit 1
+set gateway -GW_IP-
+set device "wan1"
+next
+end
+
+config system settings
+set opmode nat
+end
+
+config firewall vip
+edit "Nat1"
+set comment "Nat server"
+set extip -VIP1_IP-
+set extintf "wan1"
+set mappedip -PRIV1_IP-
+next
+end
+
+conf sys int
+edit "wan1"
+set mode static
+set ip -WAN_IP- -WAN_SM-
+set allowaccess ping https http fgfm
+next
+
+edit "internal"
+set allowaccess ping https ssh http fgfm capwap
+set type hard-switch
+set alias "LAN"
+set ip -LAN_IP- -LAN_SM-
+next

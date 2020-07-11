@@ -1,0 +1,52 @@
+{
+  "Firewall": [
+    {
+      "vendor"        :    "Fortigate",
+      "model"          :   "FGT60E",
+      "mgt_ip"        :   "192.168.80.1",
+      "mgt_sm"        :   "255.255.255.0",
+"wan1_ip"       :  "94.177.223.54",
+      "wan1_sm"       :  "255.255.255.0",		
+      "vip1_ip"       :   "94.177.223.53",
+      "priv1_ip"      :   "192.168.80.3",
+      "gw_ip"         :   "94.177.223.1",
+      "mgt_ip_def"    :   "192.168.1.99",
+      "usr_def"           :   "admin",
+      "psw_def"           :   "NULL",
+      "usr_new"       :   "fortiadmin",
+      "psw_new"       :   "pippo",
+      "conf_NAT"      :   "conf_template_60E_NAT.txt",
+      "conf_TRA"      :   "conf_template_60E_TRA.txt",
+      "mode"          :   0
+    },
+    {
+      "vendor"        :    "Fortigate",
+      "model"          :   "FGT30E",
+      "mgt_ip"        :   "192.168.80.1",
+      "mgt_sm"        :   "255.255.255.0",
+"wan1_ip"       :  "94.177.223.54",
+      "wan1_sm"       :  "255.255.255.0",		
+      "vip1_ip"       :   "94.177.223.53",
+      "priv1_ip"      :   "192.168.80.3",
+      "gw_ip"         :   "94.177.223.1",
+      "mgt_ip_def"    :   "192.168.1.99",
+      "usr_def"           :   "admin",
+      "psw_def"           :   "NULL",
+      "usr_new"       :   "fortiadmin",
+      "psw_new"       :   "pippo",
+      "conf_NAT"      :   "conf_template_60E_NAT.txt",
+      "conf_TRA"      :   "conf_template_60E_TRA.txt",
+      "mode"          :   0
+    }
+  ],
+  "Switch":[
+    {
+      "vendor"        :    "Dell",
+      "model"          :   "N2024",
+      "mgt_ip"        :   "10.150.99.11",
+      "usr"           :   "admin",
+      "psw"           :   "password",
+      "firm_img"   :   "N2000Stdv6.5.3.3.stk"
+    }
+    ]
+}
