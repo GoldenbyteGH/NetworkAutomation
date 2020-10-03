@@ -95,20 +95,20 @@ while i < len(SW_list):
         if RE_result:
             if stack == True:
                 print('#'*150 + '\r')
-                print(SW_list[i-1],"-> Lo switch "+(RE_result.group(1)+" e' in u                                                                                                                                                             no stack"))
+                print(SW_list[i-1],"-> Lo switch "+(RE_result.group(1)+" e' in uno stack"))
                 print('#'*150 + '\r')
             else:
                 print('#'*150 + '\r')
-                print(SW_list[i-1],"-> Lo switch "+(RE_result.group(1)+" NON e'                                                                                                                                                              in uno stack"))
+                print(SW_list[i-1],"-> Lo switch "+(RE_result.group(1)+" NON e'  in uno stack"))
                 print('#'*150 + '\r')
         else:
             if stack == True:
                 print('#'*150 + '\r')
-                print(SW_list[i-1],"-> Lo switch Ã¨ in uno stack ma non sono riu                                                                                                                                                             scito a recuperare l'hostname ")
+                print(SW_list[i-1],"-> Lo switch Ã¨ in uno stack ma non sono riuscito a recuperare l'hostname ")
                 print('#'*150 + '\r')
             else:
                 print('#'*150 + '\r')
-                print(SW_list[i-1],"-> Lo switch NON Ã¨ in uno stack e non sono                                                                                                                                                              riuscito a recuperare l'hostname ","\n",RE_result,''.join(output))
+                print(SW_list[i-1],"-> Lo switch NON Ã¨ in uno stack e non sono riuscito a recuperare l'hostname ","\n",RE_result,''.join(output))
                 print('#'*150 + '\r')
 
 
