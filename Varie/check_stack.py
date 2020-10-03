@@ -42,7 +42,7 @@ while i < len(SW_list):
         ssh = paramiko.SSHClient()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         ssh.connect(SW_list[i-1], username=user, password=psw)
-        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        
 
         #run command
         chan = ssh.invoke_shell()
