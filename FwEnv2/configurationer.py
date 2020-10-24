@@ -1,3 +1,6 @@
+print("HTTP/1.0 200 OK\n")
+print("Content-Type: text/html\n\n\n")
+
 """
 ---------------------------------------    CONFIGURATIONER.PY by OGC - Aruba Techops Team    ------------------------------------------------------
 Questa funzione prende in input un dizionario caricato dal file device.json e produce un file di configurazione (configfile.txt) da caricare sul device da configurare.
@@ -18,6 +21,8 @@ set password mypsw123
 next
 end
 """
+from pathlib import Path
+import cgi, cgitb 
 import os
 
 
@@ -28,13 +33,15 @@ def fix_configuration60E(specs):
     # load dirty template
    
 
-    path = os.path.join(os.path.dirname(os.path.abspath(__file__)),'') # return current directory ( regardless os )
-    print(path+'\n')
+    #path = os.path.join(os.path.dirname(os.path.abspath(__file__)),'') # return current directory ( regardless os )
+    path = Path(Path(__file__).parent).parent   # restituisce la parent directory
+    #print(path+'\n')
     # preparo la configurazione a seconda si  NAT o Transparent
     if specs["Firewall"][0]["mode"] == 0:
         print("CONFIGURAZIONE IN NAT\n")
         try:
-            template_fw = open(path + specs["Firewall"][0]["conf_NAT"])   # open conf_template
+            #template_fw = open(path + specs["Firewall"][0]["conf_NAT"])   # open conf_template
+            template_fw = open(os.path.join(path,os.path.join("configfiles",os.path.join("FGT", specs["Firewall"][0]["conf_NAT"]))))
         except:
             print("template " + specs["Firewall"][0]["conf_NAT"] + "non trovato" )
     else:
@@ -45,9 +52,11 @@ def fix_configuration60E(specs):
             print("template " + specs["Firewall"][0]["conf_TRA"] + "non trovato" )
     
     try:
-        conf = open(path + 'configfile.txt', 'w')       #create actual config file
+        conf = open(os.path.join(os.path.join(path,""),"configfile.txt"), 'w')       #create actual config file
     except:
+        print(os.path.join(os.path.join(path,""),"configfile.txt"))
         print("impossibile creare il file di configurazione, verificare i permessi di scrittura")
+        exit()
     
     for line in template_fw.readlines():
         # fix parameters:
