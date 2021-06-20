@@ -2,7 +2,7 @@
 #print("Content-Type: text/html\n\n\n")
 
 """
----------------------------------------    FW_CONFIGURATOR.PY by OGC - Aruba Techops Team    ------------------------------------------------------
+
 Questo programma esegue la configurazione in 'automagically mode' di un apparato di rete sfruttando un file contenente i parametri di default 
 ( e quindi anche il relativo template da usare come modello della configrazione)
 Il programma sfrutta la libreria netmiko ( basata su paramiko), quindi è necessario avere installate entrambi per ovviare ad eventuali errori sulle librerie
